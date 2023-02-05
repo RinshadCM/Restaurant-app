@@ -1,0 +1,65 @@
+API call in js
+--------------
+AJAX
+
+    -XMLhttp
+    -fetch
+    -async await
+
+useEffect- Hook used for displaying data whwn page loading(ngOnInit in Angular)
+
+Redirection in React
+--------------------
+        react-router-dom
+            npm i react-router-dom(For install)
+
+        import { BrowserRouter as Router            - All routing need components
+                                ,Routes             - To set paths for each component
+                                ,Route              - More than one path
+                } from 'react-router-dom';
+
+        useParams  - hook used to access params from component url
+
+REDUX
+-----
+
+    Coupling       - Many connection b/w parent & child component
+    Props Drilling - In coupling if any intermediate component have any errors, all other childs will not works
+
+    To avoid props drilling we need to reduce coupling and make all the components independent
+    
+    For this react introduced a new technology - state management technology - REDUX
+
+REDUX process
+-------------
+
+    Create a new js file to keep the states, all the components can access the js file.
+
+    The components only can access the datas from the js file
+    But they can't update datas in js file
+
+    ---------------------------                                      ___________________________
+    |                        |                                       |                         |
+    |                        |                                       |       DATA.JS           |
+    |      REDUCER           |  ---------------------------------->  |                         |
+    |                        |                                       |        state            |
+    |                        |                                       |                         |
+    --------------------------                                       ___________________________
+             ^                                                                  |
+             |                                                                  |
+             |    Response as payload                                           |
+             |                                                                  |
+             |                                                                  |
+             |                                                                  v
+    -------------------------                                        ---------------------------
+    |                        |                                       |                         |
+    |                        |        Dispatch                       |                         |
+    |      ACTION            | <----------------------------------   |       COMPONENT         |
+    |                        |                                       |                         |
+    |       logic            |                                       |                         |
+    --------------------------                                       ---------------------------
+
+
+    -Action    - A file with all the logics to update the state
+    -Dispatch  - Method used to dispatch the logic in action file when the component need state updation
+    -Reducer   - Update the datas in js file according to the payload response get from action file
