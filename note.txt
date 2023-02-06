@@ -63,3 +63,26 @@ REDUX process
     -Action    - A file with all the logics to update the state
     -Dispatch  - Method used to dispatch the logic in action file when the component need state updation
     -Reducer   - Update the datas in js file according to the payload response get from action file
+
+
+Libraries to apply redux
+------------------------
+    1-REDUX
+    2-REACT-REDUX
+    3-REDUX-THUNK
+
+        npm i redux react-redux redux-thunk
+    
+    createStore()- Method used to create store in js file
+                 - Expecting 2 arguments
+                   ---------------------
+                        1- Reducer
+                        2- Middleware (used to make synchronous redux into asynchronous)
+
+    applyMiddleware() - Method in REDUX to apply middleware
+    combineReducers() - Method in REDUX to combine reducers
+    thunk             - Used to create middleware (In redux-thunk)
+
+    1. Create store
+    2. Apply the store in index.js 
+            - provider - It's a tag used to pass the store (react-redux)
