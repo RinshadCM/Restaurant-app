@@ -3,39 +3,31 @@ import RestCard from './RestCard'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { RestaurantListAction } from '../actions/restuarantAction';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 function Restaurantlist() {
 
 
-    const [allrestaurant, setAllrestaurant] = useState([])
 
-    // Function to api call for datas inside json file
-    const getrestaurantdata = async () => {
-        await fetch('/restaurants.json').then(data => data.json()).then(result => {
-            // console.log(result);
-            setAllrestaurant(result.restaurants)
-        })
-
-    }
-
-    console.log(allrestaurant);
-
+    const dispatch= useDispatch()
+    const result=useSelector(state=>state.restaurantReducer)
+    const {restaurantList}=result
     useEffect(() => {
-        getrestaurantdata()
+        dispatch(RestaurantListAction())
+        // getrestaurantdata()
     }, [])
-
-
-
-
-
 
 
 
     return (
 
+        
+
         <Row>
             {
-                allrestaurant.map(item => (
+                restaurantList.map(item => (
                     <RestCard data={item}></RestCard>
                 ))
             }

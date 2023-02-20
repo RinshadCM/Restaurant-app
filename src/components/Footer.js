@@ -8,7 +8,6 @@ import {
     MDBBtn
 } from 'mdb-react-ui-kit';
 
-
 function Footer() {
     return (
         <div>
@@ -16,11 +15,8 @@ function Footer() {
                 <MDBFooter className='text-center text-white bg-primary'>
                     <MDBContainer className='p-4 pb-0'>
                         <section className=''>
-                            <p className='d-flex justify-content-center align-items-center'>
-                                <span className='me-3'>Register for free</span>
-                                <MDBBtn type='button' outline color="light" rounded>
-                                    Sign up!
-                                </MDBBtn>
+                            <p className='text-center mt-3' style={{ fontSize: '1.5rem' }}>
+                                "Food is not just fuel, it's information. It talks to your DNA and tells it what to do." - Dr. R.W. Todd
                             </p>
                         </section>
                     </MDBContainer>
@@ -28,7 +24,7 @@ function Footer() {
                     <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
                         © 2023 Copyright:
                         <a className='text-white' href=''>
-                            riokitchen.com
+                        &#160;www.rinshad.com
                         </a>
                     </div>
                 </MDBFooter>

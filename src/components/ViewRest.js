@@ -5,28 +5,35 @@ import Col from 'react-bootstrap/Col';
 import './ViewRest.css'
 import Modal from 'react-bootstrap/Modal';
 import { Button, Collapse } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+
 function ViewRest() {
 
     const params = useParams()
-    const [allrestaurant, setAllrestaurant] = useState([])
+    // const [allrestaurant, setAllrestaurant] = useState([])
     const [showModal, setShowModal] = useState(false);
     const [open, setOpen] = useState(false);
 
-    // Function to api call for datas inside json file
-    const getrestaurantdata = async () => {
-        await fetch('/restaurants.json').then(data => data.json()).then(result => {
-            // console.log(result);
-            setAllrestaurant(result.restaurants)
-        })
+    // // Function to api call for datas inside json file
+    // const getrestaurantdata = async () => {
+    //     await fetch('/restaurants.json').then(data => data.json()).then(result => {
+    //         // console.log(result);
+    //         setAllrestaurant(result.restaurants)
+    //     })
 
-    }
+    // }
 
-    const restData = allrestaurant.find(item => item.id == params.id)
-    console.log(restData);
 
     useEffect(() => {
-        getrestaurantdata()
+        // getrestaurantdata()
     }, [])
+
+    const result=useSelector(state=>state.restaurantReducer)
+    const {restaurantList}=result
+
+    const restData = restaurantList.find(item => item.id == params.id)
+    console.log(restData);
 
     const handleClose = () => setShowModal(false);
     const handleShow = () => setShowModal(true);

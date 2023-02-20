@@ -86,3 +86,10 @@ Libraries to apply redux
     1. Create store
     2. Apply the store in index.js 
             - provider - It's a tag used to pass the store (react-redux)
+
+AXIOS - Module used to make http methods (api call)
+            npm i axios
+
+useDispatch- Hook used to dispatch actions in components - react-redux
+
+To access datas from store to components - useSelector - hook
